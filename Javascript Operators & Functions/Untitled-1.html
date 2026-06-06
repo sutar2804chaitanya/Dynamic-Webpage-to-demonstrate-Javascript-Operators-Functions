@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Operators & Functions Demo</title>
+
+    <style>
+        /* Simple, clean CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2, p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input {
+            width: 95%; /* Leaves a little space inside the box */
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #999;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px 2px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-weight: bold;
+            min-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Operators & Functions Demo</h1>
+
+    <div class="box">
+        <h2>Arithmetic Operators</h2>
+        <input type="number" id="a" placeholder="Enter first number">
+        <input type="number" id="b" placeholder="Enter second number">
+        <button onclick="add()">Add (+)</button>
+        <button onclick="sub()">Subtract (-)</button>
+        <button onclick="mul()">Multiply (*)</button>
+        <button onclick="div()">Divide (/)</button>
+        <div class="output" id="out1">Output will show here...</div>
+    </div>
+
+    <div class="box">
+        <h2>Comparison Operators</h2>
+        <input type="number" id="c" placeholder="Enter first number">
+        <input type="number" id="d" placeholder="Enter second number">
+        <button onclick="compare()">Compare</button>
+        <div class="output" id="out2">Output will show here...</div>
+    </div>
+
+    <div class="box">
+        <h2>Logical Operators</h2>
+        <input type="number" id="age" placeholder="Enter age">
+        <button onclick="checkEligibility()">Check Eligibility</button>
+        <div class="output" id="out3">Output will show here...</div>
+    </div>
+
+    <div class="box">
+        <h2>Built-in Functions</h2>
+        <input type="text" id="text1" placeholder="Enter text">
+        <button onclick="showLength()">length()</button>
+        <button onclick="toUpper()">toUpperCase()</button>
+        <div class="output" id="out4">Output will show here...</div>
+    </div>
+
+    <div class="box">
+        <h2>User Defined Function</h2>
+        <input type="number" id="num" placeholder="Enter a number">
+        <button onclick="square()">Find Square</button>
+        <div class="output" id="out5">Output will show here...</div>
+    </div>
+
+    <script>
+        // --- Arithmetic Operators ---
+        function add() {
+            let x = Number(document.getElementById("a").value);
+            let y = Number(document.getElementById("b").value);
+            document.getElementById("out1").innerText = "Addition = " + (x + y);
+        }
+
+        function sub() {
+            let x = Number(document.getElementById("a").value);
+            let y = Number(document.getElementById("b").value);
+            document.getElementById("out1").innerText = "Subtraction = " + (x - y);
+        }
+
+        function mul() {
+            let x = Number(document.getElementById("a").value);
+            let y = Number(document.getElementById("b").value);
+            document.getElementById("out1").innerText = "Multiplication = " + (x * y);
+        }
+
+        function div() {
+            let x = Number(document.getElementById("a").value);
+            let y = Number(document.getElementById("b").value);
+            document.getElementById("out1").innerText = "Division = " + (x / y);
+        }
+
+        // --- Comparison Operators ---
+        function compare() {
+            let x = Number(document.getElementById("c").value);
+            let y = Number(document.getElementById("d").value);
+
+            let result = "x == y: " + (x == y) + " | x > y: " + (x > y) + " | x < y: " + (x < y);
+            document.getElementById("out2").innerText = result;
+        }
+
+        // --- Logical Operators ---
+        function checkEligibility() {
+            let age = Number(document.getElementById("age").value);
+
+            if (age >= 18 && age <= 60) {
+                document.getElementById("out3").innerText = "Eligible (Logical AND: &&)";
+            } else {
+                document.getElementById("out3").innerText = "Not Eligible";
+            }
+        }
+
+        // --- Built-in Functions ---
+        function showLength() {
+            let t = document.getElementById("text1").value;
+            document.getElementById("out4").innerText = "Length = " + t.length;
+        }
+
+        function toUpper() {
+            let t = document.getElementById("text1").value;
+            document.getElementById("out4").innerText = t.toUpperCase();
+        }
+
+        // --- User Defined Function ---
+        function square() {
+            let n = Number(document.getElementById("num").value);
+            let result = n * n;
+            document.getElementById("out5").innerText = "Square = " + result;
+        }
+    </script>
+
+</body>
+</html>
